@@ -131,10 +131,10 @@ class KnowledgeBase(object):
                         length = len(fact.supported_by)
                         for i in range(0, length):
                             if fact.supported_by[i][0] == kb_fact:
-                                removefact.append(i)
+                                removefact.append(fact.supported_by[i])
                         if len(removefact):
                             for k in removefact:
-                                fact.supported_by.remove(fact.supported_by[k])
+                                fact.supported_by.remove(k)
                         if len(fact.supported_by) == 0:
                             self.kb_remove(fact)
 
@@ -144,10 +144,10 @@ class KnowledgeBase(object):
                         rules = self._get_rule(rules)
                         for j in range(0, lengthr):
                             if rules.supported_by[j][0] == kb_fact:
-                                removerule.append(j)
+                                removerule.append(rules.supported_by[j])
                         if len(removerule):
                             for k in removerule:
-                                rules.supported_by.remove(rules.supported_by[k])
+                                rules.supported_by.remove(k)
                         if len(rules.supported_by) == 0:
                             self.kb_remove(rules)
 
@@ -169,10 +169,10 @@ class KnowledgeBase(object):
 
                             for i in range(0, length):
                                 if facts.supported_by[i][1] == kb_rule:
-                                    removefact.append(i)
+                                    removefact.append(facts.supported_by[i])
                             if len(removefact):
                                 for k in removefact:
-                                    facts.supported_by.remove(facts.supported_by[k])
+                                    facts.supported_by.remove(k)
                             if len(facts.supported_by) == 0:
                                 self.kb_remove(facts)
 
@@ -182,10 +182,10 @@ class KnowledgeBase(object):
                             lengthr = len(rules.supported_by)
                             for j in range(0, lengthr):
                                 if rules.supported_by[j][1] == kb_rule:
-                                    removerule.append(j)
+                                    removerule.append(rules.supported_by[j])
                             if len(removerule):
                                 for k in removerule:
-                                    rules.supported_by.remove(rules.supported_by[k])
+                                    rules.supported_by.remove(k)
                             if len(rules.supported_by) == 0:
                                 self.kb_remove(rules)
                         self.rules.remove(kb_rule)
@@ -239,10 +239,10 @@ class KnowledgeBase(object):
                     length = len(facts.supported_by)
                     for i in range(0, length):
                         if facts.supported_by[i][0] == kb_fact:
-                            removefact.append(i)
+                            removefact.append(facts.supported_by[i])
                     if len(removefact):
                         for k in removefact:
-                            facts.supported_by.remove(facts.supported_by[k])
+                            facts.supported_by.remove(k)
 
                     if len(facts.supported_by) == 0:
                         self.kb_remove(facts)
@@ -254,10 +254,10 @@ class KnowledgeBase(object):
 
                     for j in range(0, lengthr):
                         if rules.supported_by[j][0] == kb_fact:
-                            removerule.append(j)
+                            removerule.append(rules.supported_by[j])
                     if len(removerule):
                         for k in removerule:
-                            rules.supported_by.remove(rules.supported_by[k])
+                            rules.supported_by.remove(k)
 
                     if len(rules.supported_by) == 0:
                         self.kb_remove(rules)
